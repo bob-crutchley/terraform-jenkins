@@ -23,7 +23,7 @@ variable "zone" {
 }
 
 variable "image" {
-	default = "centos-7"
+	default = "jenkins"
 }
 
 variable "network" {
