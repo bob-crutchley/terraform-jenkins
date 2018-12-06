@@ -7,7 +7,7 @@ variable "terraform_keys" {
 }
 
 variable "name" {
-	default = "default"
+	default = "jenkins"
 }
 
 variable "machine_type" {

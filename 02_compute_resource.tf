@@ -1,4 +1,4 @@
-resource "google_compute_instance" "default" {
+resource "google_compute_instance" "jenkins" {
 	name = "${var.name}"
 	machine_type = "${var.machine_type}"
 	zone = "${var.zone}"
@@ -16,8 +16,10 @@ resource "google_compute_instance" "default" {
 	}
 }
 
-resource "google_compute_attached_disk" "default" {
-  disk = "jenkins-home"
-  instance = "${var.name}"
+resource "google_compute_attached_disk" "jenkins-home" {
+	depends_on = ["google_compute_instance.jenkins"]
+  	disk = "jenkins-home"
+  	instance = "${var.name}"
+	zone = "${var.zone}"
 }
 
