@@ -18,7 +18,7 @@ resource "google_compute_instance" "jenkins" {
 
 resource "google_compute_attached_disk" "jenkins-home" {
 	depends_on = ["google_compute_instance.jenkins"]
-  	disk = "jenkins-home"
+  	disk = "${var.disk}"
   	instance = "${var.name}"
 	zone = "${var.zone}"
 }

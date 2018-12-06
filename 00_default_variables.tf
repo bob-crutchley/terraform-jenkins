@@ -30,3 +30,7 @@ variable "network" {
 	default = "default"
 }
 
+variable "disk" {
+	default = "jenkins-home"
+}
+
